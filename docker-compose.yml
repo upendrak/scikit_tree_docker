@@ -1,0 +1,6 @@
+version: '2'
+services:
+    datasci:
+        build: .
+        volumes:
+            - .:/app
