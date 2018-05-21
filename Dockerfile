@@ -6,14 +6,17 @@ LABEL Description "This Dockerfile is used to build a scikit-learn’s decision 
 # Set the working directory to /app
 WORKDIR /app
 
-# Copy the current directory contents into the container at /app
-ADD . /app
+# Copy requirements file into the container at /app
+COPY requirements.txt .
 
 # Install any needed packages specified in requirements.txt
 RUN pip install -r requirements.txt
 
-# Define environment variable
-ENV NAME World
+# Copy the app.py script into the container at /app
+COPY app.py .
+
+# Reset the working directory to /
+WORKDIR /
 
 # Run app.py when the container launches
-CMD ["python", "app.py"]
+CMD ["python", "/app/app.py"]

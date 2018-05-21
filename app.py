@@ -14,8 +14,10 @@ test_data = [[190,70,42],[172,64,39],[182,80,42]];
 
 #prediction
 prediction_tree = clf_tree.predict(test_data);
+print("Prediction of DecisionTreeClassifier:")
+print(prediction_tree)
 
-# Write output to a file
+#Write output to a file
 with open("output.txt", 'w') as fh_out:
 	fh_out.write("Prediction of DecisionTreeClassifier:")
 	fh_out.write(str(prediction_tree))
