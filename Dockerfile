@@ -1,5 +1,5 @@
 # Use an official Python runtime as a parent image
-FROM python:3.6-slim
+FROM jupyter/minimal-notebook
 MAINTAINER Upendra Devisetty <upendra@cyverse.org>
 LABEL Description "This Dockerfile is used to build a scikit-learn’s decision tree image"
 
@@ -18,5 +18,4 @@ COPY app.py .
 # Reset the working directory to /
 WORKDIR /
 
-# Run app.py when the container launches
-CMD ["python", "/app/app.py"]
+
